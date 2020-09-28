@@ -14,7 +14,7 @@ class CalculatorService:
         tf.reset_default_graph()
         with tf.Session() as sess:
             sess.run(tf.global_variables_initializer())
-            saver = tf.train.import_meta_graph(os.path.join(self.model, '/calculator_' + opcode +'/model-1000.meta'))
+            saver = tf.train.import_meta_graph(os.path.join(self.model + '/calculator_' + opcode +'/model-1000.meta'))
 
             graph = tf.get_default_graph()
             w1 = graph.get_tensor_by_name('w1:0')
